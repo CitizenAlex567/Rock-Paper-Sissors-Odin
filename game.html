@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function getComputerChoice(max){
+        const randomNumber = Math.floor(Math.random() * max)
+        if (randomNumber === 0) {
+            return "rock"
+        } else if (randomNumber === 1) {
+            return "paper"
+        } else {
+            return "scissors"
+        }
+
+        }
+        console.log(getComputerChoice(3))
+        
+    </script>
+
+</body>
+</html>
