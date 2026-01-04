@@ -8,6 +8,9 @@
 <body>
     
     <script>
+
+        // Bases
+
         function getComputerChoice(max){
         const randomNumber = Math.floor(Math.random() * max)
         
@@ -22,7 +25,7 @@
         }
         console.log(getComputerChoice(3))
 
-
+        // Insertar respuesta
 
         function getHumanChoice() {
         let sign = prompt("Choose rock, paper or scissors");
@@ -33,11 +36,47 @@
          
         console.log(getHumanChoice())
 
-        {
-        let humanScore = 0
-        let computerScore = 0
-        }
+        // Puntuaciones
+
         
+        let humanScore = 0;
+        let computerScore = 0;
+        
+
+        // Logica de una ronda
+
+        function playRound(humanChoice, computerChoice) {
+            console.log("El humano eligio: " + humanChoice);
+            console.log("La computadora eligio: " + computerChoice);
+            const humanSelection = humanChoice.toLowerCase(); 
+        
+
+        if (humanChoice === computerChoice) {
+            return "Empate";
+        }
+
+        else if (humanChoice === "rock" && computerChoice === "scissors"){
+            humanScore++; return "Ganas"; 
+        }
+
+        else if (humanChoice === "paper" && computerChoice === "rock"){
+            humanScore++; return "Ganas"; 
+        }
+
+        else if (humanChoice === "scissors" && computerChoice === "paper"){
+            humanScore++; return "Ganas"; 
+        }
+
+        else {
+            computerScore++; return "pierdes"; 
+        }
+        }
+
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        playRound(humanSelection, computerSelection);
+
     </script>
 
 </body>
